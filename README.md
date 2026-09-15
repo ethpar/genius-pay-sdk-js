@@ -1,4 +1,4 @@
-# llama-pay-sdk
+# genius-pay-sdk
 
 Official SDK for ethpar services.
 
@@ -9,24 +9,33 @@ This repository provides SDK that exposes API to connect to the ethpar backend.
 
 ### react-native
 ```sh
-npm install llama-pay-sdk react-native-device-info
+npm install genius-pay-sdk react-native-device-info
 ```
 
 ### web (react)
 ```sh
-npm install llama-pay-sdk
+npm install genius-pay-sdk
 ```
 
 ## Usage
 ```
-import { MerapiClient } from 'llama-pay-sdk'
+import { MerapiClient } from 'genius-pay-sdk'
 
 const API_URL = 'https://api.dev.rampatm.net/ramp'
-const CLIENT_ID = '<your_client_id>
+const CLIENT_ID = '<your_client_id>'
+const DEVICE_ID = '<your_device_id>'
+
 const client = new MerapiClient({
   baseUrl: API_URL,
-  clientId: CLIENT_ID
+  clientId: CLIENT_ID,
+  deviceId: DEVICE_ID
 })
+
+// provide a token to authenticate subsequent requests
+client.setAuthTokenProvider(async () => '<your_session_token>')
+
+// example read call
+const user = await client.getCurrentUser()
 ```
 
 ## License
