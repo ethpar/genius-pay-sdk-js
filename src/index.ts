@@ -37,3 +37,6 @@ export * as crypto from './crypto'
 
 // Atm
 export * from './atm'
+
+// Pos
+export * from './pos'
