@@ -111,13 +111,20 @@ export class MerapiClient {
     confirmLoginCode = async (params: {
         contact: string
         code: string
+        xpub: string
+        masterFingerprint: string
+        baseDerivationPath?: string
     }): Promise<{
         sessionKey: string
     }> => {
+        params.baseDerivationPath || "m/44'/60'/0'"
         return this.http
             .post<
                 Response<{ sessionKey: string }>
-            >('/wallet/login/confirm', params)
+            >(
+                '/wallet/login/confirm',
+                params
+            )
             .then((res) => res.data.data)
     }
 
