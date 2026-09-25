@@ -1,6 +1,6 @@
 {
   "name": "genius-pay-sdk",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Official SDK for ethpar services. For more details visit https://www.ethpar.com/#join-network",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
